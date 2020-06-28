@@ -1,4 +1,4 @@
-package com.example.didstock.room;
+package com.example.didstock.data.database;
 
 import android.content.Context;
 
@@ -6,12 +6,17 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.didstock.data.database.dao.SupplierDAO;
+import com.example.didstock.data.database.entity.Supplier;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {}, version = 1)
+@Database(entities = {Supplier.class}, version = 1)
 public abstract class DidstockDatabase extends RoomDatabase {
+
     // DAO
+    public abstract SupplierDAO supplierDAO();
 
     // singleton
     private static volatile DidstockDatabase INSTANCE;
