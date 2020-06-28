@@ -37,7 +37,7 @@ public class SupplierRepository {
         DidstockDatabase.databaseWriteExecutor.execute(() -> supplierDAO.update(supplier));
     }
 
-    public void delete(Integer id) {
+    public void deleteById(Integer id) {
         DidstockDatabase.databaseWriteExecutor.execute(() -> supplierDAO.deleteById(id));
     }
 

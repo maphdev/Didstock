@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "126b08ad8780e148345112ad5eeef496",
+    "identityHash": "8242cfe322ab58637ca35fcfcf5f7d15",
     "entities": [
       {
         "tableName": "supplier",
@@ -41,12 +41,62 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "reference",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`code` TEXT NOT NULL, `image_uri` TEXT, `description` TEXT, `supplierId` INTEGER, PRIMARY KEY(`code`), FOREIGN KEY(`supplierId`) REFERENCES `supplier`(`id`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imageUri",
+            "columnName": "image_uri",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "supplierId",
+            "columnName": "supplierId",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "code"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "supplier",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "supplierId"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '126b08ad8780e148345112ad5eeef496')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '8242cfe322ab58637ca35fcfcf5f7d15')"
     ]
   }
 }
