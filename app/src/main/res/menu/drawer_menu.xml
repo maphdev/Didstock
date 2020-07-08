@@ -5,42 +5,49 @@
 
     // select only one item in the group
     <item android:title="@string/nav_section_title_0">
-        <menu android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_manage_list"
-                android:icon="@drawable/ic_list"
-                android:title="@string/nav_feature_1" />
-            <item
-                android:id="@+id/nav_scanner"
-                android:icon="@drawable/ic_barcode_scanner"
-                android:title="@string/nav_feature_2" />
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_list_management"
+                    android:icon="@drawable/ic_list"
+                    android:title="@string/nav_list_management" />
+                <item
+                    android:id="@+id/nav_scanner"
+                    android:icon="@drawable/ic_barcode_scanner"
+                    android:title="@string/nav_scanner" />
+            </group>
         </menu>
     </item>
 
     // select only one item in the group
     <item android:title="@string/nav_section_title_1">
-        <menu android:checkableBehavior="single">
-            <item
-                android:id="@+id/nav_references"
-                android:icon="@drawable/ic_references"
-                android:title="@string/nav_references" />
-            <item
-                android:id="@+id/nav_suppliers"
-                android:icon="@drawable/ic_suppliers"
-                android:title="@string/nav_suppliers" />
-            <item
-                android:id="@+id/nav_collaborators"
-                android:icon="@drawable/ic_collaborators"
-                android:title="@string/nav_collaborators" />
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_references"
+                    android:icon="@drawable/ic_references"
+                    android:title="@string/nav_references" />
+                <item
+                    android:id="@+id/nav_suppliers"
+                    android:icon="@drawable/ic_suppliers"
+                    android:title="@string/nav_suppliers" />
+                <item
+                    android:id="@+id/nav_collaborators"
+                    android:icon="@drawable/ic_collaborators"
+                    android:title="@string/nav_collaborators" />
+            </group>
         </menu>
     </item>
 
+    // select only one item in the group
     <item android:title="@string/nav_section_title_2">
         <menu>
-            <item
-                android:id="@+id/nav_others_1"
-                android:icon="@drawable/ic_settings"
-                android:title="@string/nav_option_1" />
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_settings"
+                    android:icon="@drawable/ic_settings"
+                    android:title="@string/nav_settings" />
+            </group>
         </menu>
     </item>
 </menu>
