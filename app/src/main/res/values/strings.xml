@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Didstock</string>
+    <!-- Menu -->
+    <string name="nav_section_title_0">Application</string>
+    <string name="nav_feature_1">Gestion des listes</string>
+    <string name="nav_feature_2">Scanner</string>
+
+    <string name="nav_section_title_1">Administration</string>
+    <string name="nav_references">Références</string>
+    <string name="nav_suppliers">Fournisseurs</string>
+    <string name="nav_collaborators">Collaborateurs</string>
+
+    <string name="nav_section_title_2">Autres</string>
+    <string name="nav_option_1">Paramètres</string>
+
+    <string name="nav_user">Manon Philippot</string>
+    <string name="nav_user_detail">Didstock company</string>
+
+    <string name="nav_drawer_open">Ouvrir la barre de navigation</string>
+    <string name="nav_drawer_close">Fermer la barre de navigation</string>
 </resources>
