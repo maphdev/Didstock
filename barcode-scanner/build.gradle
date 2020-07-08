@@ -1,25 +1,17 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "com.example.didstock"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
-        // Room database schemas location
-        javaCompileOptions{
-            annotationProcessorOptions{
-                arguments= ["room.schemaLocation":
-                                    "$projectDir/schemas".toString()]
-            }
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -54,14 +46,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
 
-    // Room components
-    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
-    annotationProcessor "androidx.room:room-compiler:$rootProject.roomVersion"
-    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
-
-    // Debug SQL Lite
-    debugImplementation 'com.amitshekhar.android:debug-db:1.0.4'
-
-    // Barcode Scanner Library
-    implementation project(":barcode-scanner")
+    // Barcode Scanner
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
 }
