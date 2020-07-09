@@ -15,6 +15,7 @@ import com.example.didstock.R;
 import com.example.didstock.databinding.ActivityAppBinding;
 import com.example.didstock.fragment.CollaboratorsListFragment;
 import com.example.didstock.fragment.ReferencesListFragment;
+import com.example.didstock.fragment.ScannerFragment;
 import com.example.didstock.fragment.SettingsFragment;
 import com.example.didstock.fragment.SuppliersListFragment;
 import com.example.didstock.fragment.ListManagementFragment;
@@ -71,7 +72,7 @@ public class AppActivity extends AppCompatActivity implements NavigationView.OnN
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ListManagementFragment()).commit();
                 break;
             case R.id.nav_scanner:
-                Toast.makeText(this, "Scanner non implémenté", Toast.LENGTH_SHORT).show();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ScannerFragment()).commit();
                 break;
             case R.id.nav_references:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ReferencesListFragment()).commit();
