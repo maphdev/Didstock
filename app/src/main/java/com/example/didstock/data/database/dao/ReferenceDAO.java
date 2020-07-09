@@ -2,6 +2,7 @@ package com.example.didstock.data.database.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -22,6 +23,9 @@ public interface ReferenceDAO {
 
     @Update
     public void update(Reference reference);
+
+    @Delete
+    public void delete(Reference reference);
 
     @Query("DELETE FROM reference WHERE code = :code")
     public void deleteByCode(String code);

@@ -36,6 +36,9 @@ public class ReferenceRepository {
     public void update(Reference reference) {
         DidstockDatabase.databaseWriteExecutor.execute(() -> referenceDAO.update(reference));
     }
+    public void delete(Reference reference) {
+        DidstockDatabase.databaseWriteExecutor.execute(() -> referenceDAO.delete(reference));
+    }
 
     public void deleteByCode(String code) {
         DidstockDatabase.databaseWriteExecutor.execute(() -> referenceDAO.deleteByCode(code));
